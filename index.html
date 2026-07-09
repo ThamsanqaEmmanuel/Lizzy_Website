@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LJ CO Traders (Pty) Ltd | Professional Cleaning Services</title>
+<meta name="description" content="LJ CO Traders (Pty) Ltd — reliable, affordable, high-quality cleaning services for residential, commercial, industrial and government clients in South Africa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0a2540;
+    --navy:#0d2f52;
+    --blue:#1b6fa8;
+    --blue-bright:#2486c9;
+    --steel:#8fa3b3;
+    --steel-light:#c4d0d9;
+    --off-white:#f5f8fa;
+    --paper:#ffffff;
+    --ink:#0f2236;
+    --ink-soft:#48596b;
+    --whatsapp:#25d366;
+    --error:#c0392b;
+    --success:#1a7a4a;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--off-white);line-height:1.6;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.02em;color:var(--navy-deep);line-height:1.08;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  .stripes{display:flex;gap:10px;}
+  .stripes span{width:16px;height:34px;background:var(--steel-light);transform:skewX(-22deg);}
+  .stripes span:nth-child(1){background:var(--steel);}
+  .stripes span:nth-child(3){background:var(--blue);}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,37,64,0.96);backdrop-filter:blur(6px);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1180px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .mark{width:38px;height:38px;border-radius:50%;border:2.5px solid var(--blue-bright);display:flex;align-items:center;justify-content:center;color:var(--blue-bright);font-family:'Oswald',sans-serif;font-weight:700;font-size:16px;}
+  .brand .name{color:#fff;font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.04em;line-height:1.15;}
+  .brand .name small{display:block;font-family:'Inter',sans-serif;text-transform:none;font-weight:400;font-size:11px;color:var(--steel-light);letter-spacing:0.02em;}
+  .nav-links{display:flex;gap:32px;}
+  .nav-links a{color:#dce6ee;font-size:13.5px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;transition:color .2s;}
+  .nav-links a:hover{color:var(--blue-bright);}
+  .nav-cta{display:flex;align-items:center;gap:8px;background:var(--whatsapp);color:#fff !important;padding:9px 18px;border-radius:30px;font-size:13px;font-weight:600;}
+
+  /* hero */
+  .hero{position:relative;background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,var(--blue) 130%);color:#fff;padding:160px 0 130px;overflow:hidden;}
+  .hero::after{content:"";position:absolute;right:-10%;top:0;bottom:0;width:55%;background:repeating-linear-gradient(115deg,rgba(255,255,255,0.05) 0px,rgba(255,255,255,0.05) 18px,transparent 18px,transparent 56px);pointer-events:none;}
+  .hero-inner{position:relative;z-index:2;max-width:680px;}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .eyebrow span{font-size:12.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue-bright);font-weight:600;}
+  .hero h1{font-size:clamp(42px,6vw,68px);font-weight:700;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--blue-bright);}
+  .hero p{font-size:17px;color:#cfdbe5;max-width:520px;margin-bottom:36px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:4px;font-size:13.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;font-family:'Inter',sans-serif;}
+  .btn-primary{background:var(--whatsapp);color:#fff;}
+  .btn-outline{border:1.5px solid rgba(255,255,255,0.5);color:#fff;background:transparent;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary:hover{box-shadow:0 10px 24px rgba(37,211,102,0.35);}
+  .btn-outline:hover{border-color:#fff;}
+  .hero-stats{display:flex;gap:46px;margin-top:56px;position:relative;z-index:2;}
+  .hero-stats div{border-left:2px solid var(--blue-bright);padding-left:14px;}
+  .hero-stats .num{font-family:'Oswald',sans-serif;font-size:26px;font-weight:600;color:#fff;}
+  .hero-stats .lab{font-size:12px;color:var(--steel-light);text-transform:uppercase;letter-spacing:0.05em;}
+
+  /* sections */
+  section{padding:96px 0;}
+  .section-head{max-width:620px;margin-bottom:54px;}
+  .section-head .stripes{margin-bottom:18px;}
+  .section-head h2{font-size:clamp(30px,4vw,42px);font-weight:700;margin-bottom:14px;}
+  .section-head p{color:var(--ink-soft);font-size:15.5px;}
+
+  /* about */
+  .about{background:var(--paper);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+  .about-grid h2{font-size:clamp(28px,3.6vw,38px);margin-bottom:18px;}
+  .about-grid p{color:var(--ink-soft);margin-bottom:16px;font-size:15.5px;}
+  .reg-card{background:var(--off-white);border:1px solid #e1e9ee;border-left:4px solid var(--blue);padding:28px 30px;}
+  .reg-card h4{font-size:13px;letter-spacing:0.08em;color:var(--blue);margin-bottom:18px;}
+  .reg-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #e6edf1;font-size:14px;}
+  .reg-row:last-child{border-bottom:none;}
+  .reg-row span:first-child{color:var(--ink-soft);}
+  .reg-row span:last-child{font-weight:600;text-align:right;}
+  .mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px;}
+  .mvv-card{background:var(--off-white);padding:32px 28px;border-top:3px solid var(--blue);}
+  .mvv-card h4{font-size:13px;letter-spacing:0.1em;color:var(--blue);margin-bottom:12px;}
+  .mvv-card p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* values */
+  .values{background:var(--navy-deep);color:#fff;padding:50px 0;}
+  .values .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:center;}
+  .values .val{display:flex;align-items:center;gap:10px;font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;color:#dce6ee;}
+  .values .val::before{content:"";width:8px;height:8px;background:var(--blue-bright);transform:rotate(45deg);flex-shrink:0;}
+
+  /* services */
+  .services{background:var(--off-white);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .service-card{background:var(--paper);padding:34px 30px;border:1px solid #e3eaef;transition:transform .25s,box-shadow .25s,border-color .25s;}
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(10,37,64,0.1);border-color:var(--blue);}
+  .service-card .icon{width:46px;height:46px;background:var(--navy-deep);color:var(--blue-bright);display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:15px;margin-bottom:20px;}
+  .service-card h3{font-size:19px;margin-bottom:12px;}
+  .service-card ul li{font-size:14px;color:var(--ink-soft);padding:5px 0 5px 18px;position:relative;}
+  .service-card ul li::before{content:"";position:absolute;left:0;top:13px;width:8px;height:2px;background:var(--blue);}
+
+  /* why */
+  .why{background:var(--navy-deep);color:#fff;}
+  .why .section-head h2{color:#fff;}
+  .why .section-head p{color:var(--steel-light);}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.12);}
+  .why-item{background:var(--navy-deep);padding:32px 28px;}
+  .why-item .n{font-family:'Oswald',sans-serif;font-size:13px;color:var(--blue-bright);letter-spacing:0.08em;margin-bottom:14px;}
+  .why-item p{font-size:14.5px;color:#dce6ee;}
+
+  /* contact */
+  .contact{background:var(--paper);}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;border:1px solid #e3eaef;}
+  .contact-info{background:var(--navy-deep);color:#fff;padding:56px 50px;}
+  .contact-info h2{color:#fff;font-size:clamp(26px,3.2vw,34px);margin-bottom:16px;}
+  .contact-info > p{color:var(--steel-light);font-size:15px;margin-bottom:38px;max-width:420px;}
+  .contact-link{display:flex;align-items:center;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.12);transition:padding-left .2s;}
+  .contact-link:last-of-type{border-bottom:1px solid rgba(255,255,255,0.12);}
+  .contact-link:hover{padding-left:8px;}
+  .contact-link .ic{width:42px;height:42px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.08);color:var(--blue-bright);}
+  .contact-link .ic.wa{color:var(--whatsapp);}
+  .contact-link .tx .lab{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--steel-light);margin-bottom:3px;}
+  .contact-link .tx .val{font-size:15.5px;font-weight:500;}
+  .contact-form-side{background:var(--off-white);padding:56px 50px;display:flex;flex-direction:column;justify-content:center;}
+  .contact-form-side h3{font-size:22px;margin-bottom:14px;}
+  .contact-form-side > p{color:var(--ink-soft);font-size:14.5px;margin-bottom:30px;}
+  .quick-actions{display:flex;flex-direction:column;gap:14px;}
+  .btn-block{width:100%;}
+  .btn-navy{background:var(--navy-deep);color:#fff;}
+  .btn-navy:hover{box-shadow:0 10px 24px rgba(10,37,64,0.25);}
+  .btn-call{border:1.5px solid #cdd9e0;color:var(--navy-deep);background:transparent;}
+  .address-note{margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.15);font-size:13.5px;color:var(--steel-light);}
+  .address-note strong{color:#fff;display:block;margin-bottom:6px;font-family:'Oswald',sans-serif;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;}
+
+  /* footer */
+  footer{background:var(--navy-deep);color:var(--steel-light);padding:34px 0;border-top:1px solid rgba(255,255,255,0.08);}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .tag{font-size:13px;}
+  footer .tag strong{color:#fff;}
+  footer small{font-size:12px;color:var(--steel);}
+
+  /* float wa */
+  .float-wa{position:fixed;bottom:26px;right:26px;z-index:200;width:58px;height:58px;border-radius:50%;background:var(--whatsapp);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(37,211,102,0.4);animation:pulse 2.4s infinite;}
+  .float-wa svg{width:28px;height:28px;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.45);}70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+  /* ══════════ MODAL ══════════ */
+  .modal-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(10,37,64,0.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px;}
+  .modal-overlay.open{display:flex;}
+  .modal{background:var(--paper);width:100%;max-width:560px;max-height:92vh;overflow-y:auto;animation:slideUp .26s ease;}
+  @keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  .modal-head{background:var(--navy-deep);color:#fff;padding:28px 36px 24px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;}
+  .modal-head h3{color:#fff;font-size:21px;margin-bottom:5px;}
+  .modal-head p{color:var(--steel-light);font-size:13.5px;font-family:'Inter',sans-serif;text-transform:none;letter-spacing:0;line-height:1.5;}
+  .modal-close{background:rgba(255,255,255,0.1);border:none;color:#fff;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:20px;line-height:1;transition:background .2s;}
+  .modal-close:hover{background:rgba(255,255,255,0.22);}
+  .modal-body{padding:30px 36px 36px;}
+
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:11.5px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink-soft);margin-bottom:6px;}
+  .field label .req{color:var(--blue-bright);margin-left:1px;}
+  .field input,
+  .field select,
+  .field textarea{width:100%;padding:11px 14px;border:1.5px solid #d5dfe8;border-radius:3px;font-size:15px;font-family:'Inter',sans-serif;color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none;}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue-bright);box-shadow:0 0 0 3px rgba(36,134,201,0.13);}
+  .field input.invalid,.field select.invalid,.field textarea.invalid{border-color:var(--error);}
+  .field .err-msg{font-size:11.5px;color:var(--error);margin-top:4px;display:none;}
+  .field.has-error .err-msg{display:block;}
+  .field textarea{height:96px;resize:vertical;}
+  .field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2348596b' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+
+  .submit-btn{width:100%;padding:14px;background:var(--navy-deep);color:#fff;border:none;border-radius:3px;font-family:'Oswald',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .15s,box-shadow .2s;margin-top:6px;}
+  .submit-btn:hover:not(:disabled){background:var(--blue);transform:translateY(-1px);box-shadow:0 8px 20px rgba(10,37,64,0.2);}
+  .submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+  .spinner{width:18px;height:18px;border-radius:50%;border:2.5px solid rgba(255,255,255,0.3);border-top-color:#fff;animation:spin .7s linear infinite;display:none;}
+  .submit-btn.loading .spinner{display:block;}
+  .submit-btn.loading .btn-label{display:none;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .form-alert{background:#fff3f3;border:1px solid #f5c6c6;color:var(--error);padding:11px 15px;border-radius:3px;font-size:13.5px;margin-bottom:16px;display:none;line-height:1.5;}
+
+  /* success */
+  .form-success{display:none;text-align:center;padding:10px 0 4px;}
+  .checkmark-circle{width:68px;height:68px;border-radius:50%;background:rgba(26,122,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .form-success h4{font-size:21px;color:var(--success);margin-bottom:10px;}
+  .form-success p{font-size:14.5px;color:var(--ink-soft);font-family:'Inter',sans-serif;text-transform:none;letter-spacing:0;line-height:1.6;margin-bottom:4px;}
+  .form-success .wa-follow{display:inline-flex;align-items:center;gap:8px;margin-top:22px;background:var(--whatsapp);color:#fff;padding:11px 22px;border-radius:30px;font-size:14px;font-weight:600;transition:opacity .2s;}
+  .form-success .wa-follow:hover{opacity:0.88;}
+
+  @media (prefers-reduced-motion:reduce){.float-wa,.spinner{animation:none;}*{scroll-behavior:auto;}.modal{animation:none;}}
+  @media (max-width:880px){.nav-links{display:none;}.about-grid{grid-template-columns:1fr;}.mvv{grid-template-columns:1fr;}.service-grid{grid-template-columns:1fr 1fr;}.why-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.hero{padding:140px 0 90px;}.hero::after{display:none;}}
+  @media (max-width:600px){.form-row{grid-template-columns:1fr;}.modal-head,.modal-body{padding-left:22px;padding-right:22px;}}
+  @media (max-width:560px){.service-grid{grid-template-columns:1fr;}.hero-stats{flex-wrap:wrap;gap:24px;}.contact-info,.contact-form-side{padding:38px 24px;}}
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--blue-bright);outline-offset:2px;}
+</style>
+<!--
+  AUTO-REPLY SETUP (2 min, one-time):
+  1. Log in at formspree.io → open form mlgyzyny → click Settings tab
+  2. Scroll to "Auto-response Email" → toggle ON
+  3. Subject: We have received your enquiry — LJ Co Traders
+  4. Body:
+       Dear {{name}},
+       Thank you for contacting LJ Co Traders (Pty) Ltd.
+       We received your {{service}} enquiry and will respond within one business day.
+       For urgent help: call or WhatsApp 068 006 3084.
+       Kind regards, Paledi Kgomo — ethamsanqa@gmail.com
+  5. Save. Done!
+-->
+</head>
+<body>
+
+<!-- ════════════════ QUOTE MODAL ════════════════ -->
+<div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+
+    <div class="modal-head">
+      <div>
+        <h3 id="modalTitle">Get a Free Quote</h3>
+        <p>Fill in your details and we'll get back to you within one business day.</p>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-alert" id="formAlert"></div>
+
+      <!-- FORM -->
+      <div id="quoteForm">
+        <div class="form-row">
+          <div class="field" id="field-firstName">
+            <label for="firstName">First Name <span class="req">*</span></label>
+            <input type="text" id="firstName" placeholder="Thabo" autocomplete="given-name">
+            <div class="err-msg">Please enter your first name.</div>
+          </div>
+          <div class="field" id="field-lastName">
+            <label for="lastName">Surname <span class="req">*</span></label>
+            <input type="text" id="lastName" placeholder="Nkosi" autocomplete="family-name">
+            <div class="err-msg">Please enter your surname.</div>
+          </div>
+        </div>
+
+        <div class="field" id="field-email">
+          <label for="custEmail">Email Address <span class="req">*</span></label>
+          <input type="email" id="custEmail" placeholder="you@example.com" autocomplete="email">
+          <div class="err-msg">Please enter a valid email address.</div>
+        </div>
+
+        <div class="field" id="field-phone">
+          <label for="custPhone">Phone / Cell Number <span class="req">*</span></label>
+          <input type="tel" id="custPhone" placeholder="071 234 5678" autocomplete="tel">
+          <div class="err-msg">Please enter your phone number.</div>
+        </div>
+
+        <div class="field" id="field-service">
+          <label for="serviceType">Service Required <span class="req">*</span></label>
+          <select id="serviceType">
+            <option value="" disabled selected>— Select a service —</option>
+            <option>Commercial Cleaning</option>
+            <option>Residential / House Cleaning</option>
+            <option>Deep Cleaning</option>
+            <option>Industrial Cleaning</option>
+            <option>Post-Construction Cleaning</option>
+            <option>Event Venue Cleaning</option>
+            <option>Disinfection &amp; Sanitisation</option>
+            <option>Facilities Support</option>
+            <option>Other / Not sure yet</option>
+          </select>
+          <div class="err-msg">Please select a service.</div>
+        </div>
+
+        <div class="field">
+          <label for="custMessage">Additional Details <span style="color:var(--steel);font-weight:400;text-transform:none;">(optional)</span></label>
+          <textarea id="custMessage" placeholder="E.g. size of space, frequency needed, preferred start date…"></textarea>
+        </div>
+
+        <button class="submit-btn" id="submitBtn" onclick="submitQuote()">
+          <div class="spinner"></div>
+          <span class="btn-label">Send Enquiry</span>
+        </button>
+      </div>
+      <!-- END FORM -->
+
+      <!-- SUCCESS STATE -->
+      <div class="form-success" id="formSuccess">
+        <div class="checkmark-circle">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1a7a4a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4>Enquiry Sent!</h4>
+        <p>Thank you — a confirmation email has been sent to you.</p>
+        <p><strong>Paledi</strong> will be in touch within one business day.</p>
+        <a class="wa-follow" href="https://wa.me/27680063084?text=Hi%20LJ%20Co%20Traders%2C%20I%20just%20submitted%20an%20email%20enquiry%20and%20wanted%20to%20follow%20up." target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.18-1.35a9.97 9.97 0 0 0 4.86 1.24h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89zm5.86 14.18c-.25.7-1.45 1.34-2 1.43-.51.08-1.16.11-1.87-.12-.43-.14-.98-.33-1.69-.64-2.97-1.28-4.9-4.27-5.05-4.47-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .56.01.18.01.42-.07.66.5.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.08.18-.2.76-.89.97-1.2.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.13.08.74-.17 1.44z"/></svg>
+          Also follow up on WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- ════════════════ END MODAL ════════════════ -->
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="mark">LJ</div>
+      <div class="name">LJ CO Traders<small>(Pty) Ltd — Cleaning Services</small></div>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/27680063084?text=Hi%20LJ%20Co%20Traders%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">WhatsApp Us</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">
+      <div class="stripes"><span></span><span></span><span></span></div>
+      <span>South African Owned · Est. 2026</span>
+    </div>
+    <h1>Clean spaces. <em>Lasting</em> impressions.</h1>
+    <p>Reliable, affordable, and high-quality cleaning services for residential, commercial, industrial, and government clients across South Africa.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://wa.me/27680063084?text=Hi%20LJ%20Co%20Traders%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn btn-outline" href="#services">View Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="num">4</div><div class="lab">Client Sectors</div></div>
+      <div><div class="num">15+</div><div class="lab">Service Types</div></div>
+      <div><div class="num">100%</div><div class="lab">SA Owned</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="stripes" style="margin-bottom:18px;"><span></span><span></span><span></span></div>
+        <h2>About LJ Co Traders</h2>
+        <p>LJ CO Traders (Pty) Ltd is a South African-owned company committed to delivering reliable, professional, and cost-effective cleaning and support services to residential, commercial, industrial, and government clients.</p>
+        <p>We pride ourselves on maintaining high standards of cleanliness, hygiene, safety, and customer satisfaction — providing customised cleaning solutions that meet the unique needs of each client while ensuring a healthy, productive environment.</p>
+      </div>
+      <div class="reg-card">
+        <h4>COMPANY INFORMATION</h4>
+        <div class="reg-row"><span>Company Name</span><span>LJ CO Traders (Pty) Ltd</span></div>
+        <div class="reg-row"><span>Registration No.</span><span>2026/436773/07</span></div>
+        <div class="reg-row"><span>Business Type</span><span>Private Company</span></div>
+        <div class="reg-row"><span>Country</span><span>South Africa</span></div>
+        <div class="reg-row"><span>Status</span><span>Active &amp; In Business</span></div>
+        <div class="reg-row"><span>Contact Person</span><span>Paledi Kgomo</span></div>
+      </div>
+    </div>
+    <div class="mvv">
+      <div class="mvv-card"><h4>OUR MISSION</h4><p>To provide exceptional cleaning and hygiene services that exceed client expectations through professionalism, reliability, innovation, and attention to detail.</p></div>
+      <div class="mvv-card"><h4>OUR VISION</h4><p>To become one of South Africa's most trusted cleaning and facilities support service providers, recognised for quality, integrity, and customer satisfaction.</p></div>
+      <div class="mvv-card"><h4>OUR COMMITMENT</h4><p>Building long-term relationships with dependable, efficient, professional service — creating clean, healthy, welcoming environments for every client.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="values">
+  <div class="wrap">
+    <div class="val">Professionalism</div>
+    <div class="val">Integrity</div>
+    <div class="val">Reliability</div>
+    <div class="val">Excellence</div>
+    <div class="val">Customer Focus</div>
+    <div class="val">Accountability</div>
+    <div class="val">Safety &amp; Compliance</div>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stripes"><span></span><span></span><span></span></div>
+      <h2>Our Services</h2>
+      <p>From everyday office upkeep to specialised industrial and post-construction work, our trained teams are equipped for every job.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><div class="icon">01</div><h3>Commercial Cleaning</h3><ul><li>Office cleaning</li><li>Boardroom cleaning</li><li>Reception area cleaning</li><li>Restroom sanitation</li><li>Carpet &amp; upholstery cleaning</li><li>Window cleaning</li></ul></div>
+      <div class="service-card"><div class="icon">02</div><h3>Residential Cleaning</h3><ul><li>House cleaning</li><li>Deep cleaning</li><li>Move-in &amp; move-out cleaning</li><li>Post-renovation cleaning</li></ul></div>
+      <div class="service-card"><div class="icon">03</div><h3>Industrial Cleaning</h3><ul><li>Warehouse cleaning</li><li>Factory cleaning</li><li>Equipment cleaning</li><li>Site cleaning</li></ul></div>
+      <div class="service-card"><div class="icon">04</div><h3>Specialised Cleaning</h3><ul><li>Post-construction cleaning</li><li>Event venue cleaning</li><li>High-level dusting</li><li>Disinfection &amp; sanitisation</li></ul></div>
+      <div class="service-card"><div class="icon">05</div><h3>Facilities Support</h3><ul><li>General maintenance support</li><li>Waste management</li><li>Grounds &amp; outdoor area cleaning</li><li>Hygiene consumable supply</li></ul></div>
+      <div class="service-card"><div class="icon">+</div><h3>Tailored Packages</h3><ul><li>Custom service schedules</li><li>Government &amp; institutional contracts</li><li>Once-off and recurring bookings</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stripes"><span></span><span></span><span></span></div>
+      <h2>Why Choose Us</h2>
+      <p>What sets LJ Co Traders apart from the rest.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="n">01</div><p>Qualified and trained cleaning personnel</p></div>
+      <div class="why-item"><div class="n">02</div><p>Competitive pricing</p></div>
+      <div class="why-item"><div class="n">03</div><p>Flexible service packages</p></div>
+      <div class="why-item"><div class="n">04</div><p>High-quality cleaning products and equipment</p></div>
+      <div class="why-item"><div class="n">05</div><p>Health and safety compliance</p></div>
+      <div class="why-item"><div class="n">06</div><p>Reliable and responsive customer support</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Let's Talk</h2>
+        <p>Reach out for a free, no-obligation quote. We typically respond within the same business day.</p>
+
+        <a class="contact-link" href="https://wa.me/27680063084?text=Hi%20LJ%20Co%20Traders%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">
+          <div class="ic wa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.18-1.35a9.97 9.97 0 0 0 4.86 1.24h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89zm5.86 14.18c-.25.7-1.45 1.34-2 1.43-.51.08-1.16.11-1.87-.12-.43-.14-.98-.33-1.69-.64-2.97-1.28-4.9-4.27-5.05-4.47-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .56.01.18.01.42-.07.66.5.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.08.18-.2.76-.89.97-1.2.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.13.08.74-.17 1.44z"/></svg>
+          </div>
+          <div class="tx"><div class="lab">WhatsApp</div><div class="val">068 006 3084</div></div>
+        </a>
+
+        <a class="contact-link" href="tel:+27680063084">
+          <div class="ic">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg>
+          </div>
+          <div class="tx"><div class="lab">Call Us</div><div class="val">068 006 3084</div></div>
+        </a>
+
+        <a class="contact-link" href="mailto:ethamsanqa@gmail.com?subject=Cleaning%20Services%20Enquiry">
+          <div class="ic">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+          </div>
+          <div class="tx"><div class="lab">Email</div><div class="val">ethamsanqa@gmail.com</div></div>
+        </a>
+
+        <div class="address-note">
+          <strong>Physical Address</strong>
+          5859 Extension 4, Soshanguve South Ext 4, Soshanguve, Gauteng, 0152, South Africa
+        </div>
+      </div>
+
+      <div class="contact-form-side">
+        <h3>Get a Free Quote</h3>
+        <p>Fill in the form with your details and we'll send you a tailored cleaning plan.</p>
+        <div class="quick-actions">
+          <a class="btn btn-primary btn-block" href="https://wa.me/27680063084?text=Hi%20LJ%20Co%20Traders%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">
+            Message on WhatsApp
+          </a>
+          <button class="btn btn-navy btn-block" onclick="openModal()">
+            Send an Email Enquiry
+          </button>
+          <a class="btn btn-call btn-block" href="tel:+27680063084">
+            Call 068 006 3084
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="tag"><strong>LJ Co Traders (Pty) Ltd</strong> — Delivering Clean Spaces, Professional Service, and Lasting Impressions.</div>
+    <small>&copy; 2026 LJ Co Traders (Pty) Ltd. Reg. 2026/436773/07. All rights reserved.</small>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/27680063084?text=Hi%20LJ%20Co%20Traders%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.18-1.35a9.97 9.97 0 0 0 4.86 1.24h.01c5.52 0 10-4.48 10-10s-4.49-9.89-10.01-9.89zm5.86 14.18c-.25.7-1.45 1.34-2 1.43-.51.08-1.16.11-1.87-.12-.43-.14-.98-.33-1.69-.64-2.97-1.28-4.9-4.27-5.05-4.47-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .56.01.18.01.42-.07.66.5.25.6.84 2.07.91 2.22.07.15.12.33.02.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.36 1.46.3.15.47.13.65-.08.18-.2.76-.89.97-1.2.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.13.08.74-.17 1.44z"/></svg>
+</a>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+// ── EmailJS keys ─────────────────────────────────────
+const EJ_PUBLIC_KEY  = 'u5T_e8jdIzeHeWLjX';
+const EJ_SERVICE_ID  = 'service_6grq20l';
+const EJ_TPL_NOTIFY  = 'template_nk3th0i';  // enquiry to you
+const EJ_TPL_REPLY   = 'template_7wwribq';  // auto-reply to customer
+
+emailjs.init({ publicKey: EJ_PUBLIC_KEY });
+
+// ── modal ────────────────────────────────────────────
+function openModal(){
+  document.getElementById('quoteModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>document.getElementById('firstName').focus(),80);
+}
+function closeModal(){
+  document.getElementById('quoteModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('quoteModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+
+// ── validation ───────────────────────────────────────
+function isEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+function setErr(id,on){
+  const w=document.getElementById('field-'+id);if(!w)return;
+  const inp=w.querySelector('input,select,textarea');
+  w.classList.toggle('has-error',on);
+  if(inp)inp.classList.toggle('invalid',on);
+}
+
+// ── submit via EmailJS ───────────────────────────────
+async function submitQuote(){
+  ['firstName','lastName','email','phone','service'].forEach(id=>setErr(id,false));
+  document.getElementById('formAlert').style.display='none';
+
+  const first   = document.getElementById('firstName').value.trim();
+  const last    = document.getElementById('lastName').value.trim();
+  const email   = document.getElementById('custEmail').value.trim();
+  const phone   = document.getElementById('custPhone').value.trim();
+  const service = document.getElementById('serviceType').value;
+  const msg     = document.getElementById('custMessage').value.trim();
+
+  let ok=true;
+  if(!first)         {setErr('firstName',true);ok=false;}
+  if(!last)          {setErr('lastName',true);ok=false;}
+  if(!isEmail(email)){setErr('email',true);ok=false;}
+  if(!phone)         {setErr('phone',true);ok=false;}
+  if(!service)       {setErr('service',true);ok=false;}
+  if(!ok) return;
+
+  const btn=document.getElementById('submitBtn');
+  btn.classList.add('loading');btn.disabled=true;
+
+  const params = {
+    customer_name:  first+' '+last,
+    customer_email: email,
+    customer_phone: phone,
+    service_type:   service,
+    message:        msg||'(No additional details provided)',
+  };
+
+  try{
+    // 1. Send enquiry notification to you
+    await emailjs.send(EJ_SERVICE_ID, EJ_TPL_NOTIFY, params);
+    // 2. Send auto-reply confirmation to customer
+    await emailjs.send(EJ_SERVICE_ID, EJ_TPL_REPLY, params);
+    // Show success screen
+    document.getElementById('quoteForm').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  } catch(err){
+    const al=document.getElementById('formAlert');
+    al.textContent='Something went wrong — please try again or contact us on WhatsApp.';
+    al.style.display='block';
+    console.error('EmailJS error:', err);
+  } finally {
+    btn.classList.remove('loading');btn.disabled=false;
+  }
+}
+</script>
+</body>
+</html>
